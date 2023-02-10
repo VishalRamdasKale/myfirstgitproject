@@ -1,0 +1,77 @@
+<html><head><style>      
+     ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+   background: linear-gradient(180deg,#ff0000 40%,white);
+  background-size: cover;
+  width: 100%;
+  height:150px;
+ 
+}
+
+
+
+li {
+  float: right;
+  margin-left: 40px;
+  
+}
+
+li a {
+  display: block;
+  padding: 40px;
+  color: rgb(250, 250, 250);
+ 
+}
+h1{
+	font-size:40px;
+	float: left;
+	padding: 10px;
+    color: white;
+	text-shadow: 2px 2px black;
+}
+
+{
+	font-size:40px;
+	float: left;
+	padding: 10px;
+    color: white;
+	text-shadow: 2px 2px black;
+}
+</style>
+</head>
+<body>
+<nav>
+	
+    <ul>
+	<h1>Your cart</h1>
+<li><a href="login.html">Logout</a></li>
+<li><a href="home.html">Home</a></li>
+        
+      </ul>
+    </nav>
+
+
+<script>
+const storedBlogs = JSON.parse(localStorage.getItem('cart'));
+var items = new Array("Masala Dosa", "Chaat", "Dal Makhani", "Vada pav", "Stuffed Paratha","Dhokla","Barfi","Pani Puri");
+var Price = new Array(60, 30, 80, 50, 20,35,15,30);
+var total=0;
+for (i=0;i<storedBlogs.length;i++)
+{
+if(storedBlogs[i]!=0)
+{
+
+document.write('<h4>'+items[i] +" : "+storedBlogs[i] + "       "+ "<br />"+"Amount :"+ storedBlogs[i]*Price[i] +'</h4>'+"<br />");
+total+=storedBlogs[i]*Price[i];
+}
+}
+
+document.write('<h4>'+"Your cart total :" + total +'</h4>'+ "<br />");
+
+document.write('<button href="success">Place order</button>');
+
+</script>
+</body></html>
